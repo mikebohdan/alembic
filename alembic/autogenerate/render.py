@@ -573,6 +573,8 @@ def _repr_type(type_, autogen_context):
     if hasattr(autogen_context.migration_context, 'impl'):
         impl_rt = autogen_context.migration_context.impl.render_type(
             type_, autogen_context)
+    else:
+        impl_rt = None
 
     mod = type(type_).__module__
     imports = autogen_context.imports
